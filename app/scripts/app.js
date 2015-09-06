@@ -18,7 +18,4 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.router'
-  ])
-  .config(function ($logProvider) {
-    $logProvider.debugEnabled(true);
-  });
+  ]);
