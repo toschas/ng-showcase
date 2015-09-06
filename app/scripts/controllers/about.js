@@ -10,8 +10,10 @@
 angular.module('labDay00002App')
   .controller('AboutCtrl', function ($scope, $rootScope, $stateParams, $state, $log) {
     var logScope = 'AboutCtrl';
+
     $scope.param = $stateParams.param;
     $log.debug(logScope, 'param', $scope.param);
+
     $rootScope.pageTitle = 'About';
     $log.debug(logScope, 'pageTitle', $rootScope.pageTitle);
 

@@ -11,5 +11,6 @@
 angular
   .module('labDay00002App')
   .config(function ($logProvider) {
-    $logProvider.debugEnabled(true);
+    var debugEnabled = true; // Extract to grunt environment variables for dev, test and prod
+    $logProvider.debugEnabled(debugEnabled);
   });
