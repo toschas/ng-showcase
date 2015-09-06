@@ -24,7 +24,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr data-ng-repeat="item in items | orderBy:sort.type:sort.reverse">
+    <tr data-ng-repeat="item in items | orderBy:sort.order:sort.reverse">
       <td><span data-ng-bind="item.index"></span></td>
       <td><img data-ng-src="{{item.picture}}"/></td>
       <td><span data-ng-bind="item.isActive"></span></td>
