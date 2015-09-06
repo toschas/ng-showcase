@@ -17,5 +17,6 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngLodash',
     'ui.router'
   ]);
