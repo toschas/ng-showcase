@@ -14,6 +14,29 @@ angular.module('labDay00002App')
     $log.debug(logScope, 'param', $scope.param);
     $rootScope.pageTitle = 'About';
     $log.debug(logScope, 'pageTitle', $rootScope.pageTitle);
+
+    $scope.sort = {
+      type: 'index',
+      sortReverse: false
+    };
+
+    $scope.setSort = function (sortType) {
+      if ($scope.sort.type === sortType) {
+        $scope.sort.reverse = !$scope.sort.reverse;
+      } else {
+        $scope.sort.reverse = false;
+      }
+      $scope.sort.type = sortType;
+    };
+
+    $scope.getSortIcon = function (column) {
+      return {
+        'glyphicon-sort': $scope.sort.type != column,
+        'glyphicon-sort-by-attributes': $scope.sort.type == column && !$scope.sort.reverse,
+        'glyphicon-sort-by-attributes-alt': $scope.sort.type == column && $scope.sort.reverse
+      };
+    };
+
     $scope.items = [
       {
         "_id": "55ec6cfda50387260e88180b",

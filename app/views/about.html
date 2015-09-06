@@ -1,16 +1,30 @@
 <p>This is the about view. Param: <span ng-bind="param"></span></p>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Index</th>
-      <th>Picture</th>
-      <th>Active?</th>
-      <th>Balance</th>
+      <th>
+        Index
+        <i ng-click="setSort('index')" class="btn btn-xs glyphicon pull-right"
+           ng-class="getSortIcon('index')"></i>
+      </th>
+      <th>
+        Picture
+      </th>
+      <th>
+        Active?
+        <i ng-click="setSort('isActive')" class="btn btn-xs glyphicon pull-right"
+           ng-class="getSortIcon('isActive')"></i>
+      </th>
+      <th>
+        Balance
+        <i ng-click="setSort('balance')" class="btn btn-xs glyphicon pull-right"
+           ng-class="getSortIcon('balance')"></i>
+      </th>
     </tr>
   </thead>
   <tbody>
-    <tr data-ng-repeat="item in items">
+    <tr data-ng-repeat="item in items | orderBy:sort.type:sort.reverse">
       <td><span data-ng-bind="item.index"></span></td>
       <td><img data-ng-src="{{item.picture}}"/></td>
       <td><span data-ng-bind="item.isActive"></span></td>
