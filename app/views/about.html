@@ -1,1 +1,20 @@
 <p>This is the about view. Param: <span ng-bind="param"></span></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Picture</th>
+      <th>Active?</th>
+      <th>Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="item in items">
+      <td><span data-ng-bind="item.index"></span></td>
+      <td><img data-ng-src="{{item.picture}}"/></td>
+      <td><span data-ng-bind="item.isActive"></span></td>
+      <td><span data-ng-bind="item.balance"></span></td>
+    </tr>
+  </tbody>
+</table>
