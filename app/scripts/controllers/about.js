@@ -8,7 +8,7 @@
  * Controller of the labDay00002App
  */
 angular.module('labDay00002App')
-  .controller('AboutCtrl', function ($scope, $rootScope, $stateParams, $state, Items, $log) {
+  .controller('AboutCtrl', function ($scope, $rootScope, $stateParams, $state, Item, lodash, $log) {
     var logScope = 'AboutCtrl';
 
     $scope.param = $stateParams.param;
@@ -18,8 +18,8 @@ angular.module('labDay00002App')
     $log.debug(logScope, 'pageTitle', $rootScope.pageTitle);
 
     $scope.sort = {
-      order: $stateParams.order || 'index',
-      reverse: $stateParams.reverse || false
+      order: lodash.isUndefined($stateParams.order) ? 'index' : $stateParams.order,
+      reverse: lodash.isUndefined($stateParams.reverse) ? false : angular.fromJson($stateParams.reverse)
     };
 
     $scope.setSort = function (sortOrder) {
@@ -48,8 +48,8 @@ angular.module('labDay00002App')
       $state.transitionTo($state.current, $stateParams, { notify: false });
     };
 
-    $scope.items = Items.getAll();
+    $scope.items = Item.getAll();
 
-    $log.debug(Items.get('779369b6-7144-4a49-93e5-169fdc439ff1'));
+    $log.debug(logScope, 'updating query params', Item.get('779369b6-7144-4a49-93e5-169fdc439ff1'));
   }
 );
