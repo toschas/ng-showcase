@@ -6,13 +6,13 @@ describe('Factory: Item', function () {
   beforeEach(module('labDay00002App'));
 
   // instantiate factory
-  var item;
-  beforeEach(inject(function (_item_) {
-    item = _item_;
+  var Item;
+  beforeEach(inject(function (_Item_) {
+    Item = _Item_;
   }));
 
   it('should do something', function () {
-    expect(!!item).toBe(true);
+    expect(!!Item).toBe(true);
   });
 
 });

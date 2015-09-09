@@ -138,6 +138,13 @@ angular.module('labDay00002App')
       },
       getAll: function () {
         return items;
+      },
+      getPage: function (page, pageSize) {
+        // TODO: include filters in the service
+        pageSize = lodash.isUndefined(pageSize) ? 10 : pageSize;
+        var start = (page - 1) * pageSize;
+        var end = start + pageSize;
+        return lodash.slice(items, start, end);
       }
     };
   });

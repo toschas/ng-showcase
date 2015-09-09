@@ -34,7 +34,7 @@ angular
       })
       .state('about', {
         parent: "template",
-        url: "/about/:param?order&reverse",
+        url: "/about/:param?order&reverse&page",
         views: {
           "content@": {
             templateUrl: "views/about.html",

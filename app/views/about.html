@@ -1,25 +1,49 @@
 <p>This is the about view. Param: <span ng-bind="param"></span></p>
 
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous" data-ng-click="previousPage($event)">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li data-ng-repeat="page in pages" ng-class="{'active': page === currentPage}">
+      <a href="#" data-ng-bind="page" data-ng-click="changePage($event, page)"></a>
+    </li>
+    <li>
+      <a href="#" aria-label="Next" data-ng-click="nextPage($event)">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th>
         Index
-        <i ng-click="setSort('index')" class="btn btn-xs glyphicon pull-right"
-           ng-class="getSortIcon('index')"></i>
+        <i data-sort-icon
+           data-sort-icon-attr="index"
+           data-sort-icon-click="setSort"
+           data-sort-icon-sort="sort"></i>
       </th>
       <th>
         Picture
       </th>
       <th>
         Active?
-        <i ng-click="setSort('isActive')" class="btn btn-xs glyphicon pull-right"
-           ng-class="getSortIcon('isActive')"></i>
+        <i data-sort-icon
+           data-sort-icon-attr="isActive"
+           data-sort-icon-click="setSort"
+           data-sort-icon-sort="sort"></i>
       </th>
       <th>
         Balance
-        <i ng-click="setSort('balance')" class="btn btn-xs glyphicon pull-right"
-           ng-class="getSortIcon('balance')"></i>
+        <i data-sort-icon
+           data-sort-icon-attr="balance"
+           data-sort-icon-click="setSort"
+           data-sort-icon-sort="sort"></i>
       </th>
     </tr>
   </thead>
@@ -32,3 +56,21 @@
     </tr>
   </tbody>
 </table>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous" data-ng-click="previousPage($event)">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li data-ng-repeat="page in pages" ng-class="{'active': page === currentPage}">
+      <a href="#" data-ng-bind="page" data-ng-click="changePage($event, page)"></a>
+    </li>
+    <li>
+      <a href="#" aria-label="Next" data-ng-click="nextPage($event)">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
