@@ -11,7 +11,7 @@ angular.module('labDay00002App')
     return {
       template:
         '<i class="btn btn-xs glyphicon pull-right" data-ng-class="getSortIcon()"></i>',
-      restrict: 'A',
+      restrict: 'AEC',
       scope: {
         attribute: '@sortIconAttr',
         onClick: '=sortIconClick',
